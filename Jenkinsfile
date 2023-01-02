@@ -29,30 +29,12 @@ pipeline {
         }
     } 
     stage('SonarQube'){
-
- 
-
-        steps{
-
- 
-
-            bat label: '', script: '''mvn sonar:sonar \
-
- 
-
-            -Dsonar.host.url=http://localhost:9000 \
-
- 
-
-            -Dsonar.login=squ_a600809848d6c2140cff3fbfb9856b3e721ca481'''
-
- 
-
-            }
-
- 
-
-   } 
+    steps{
+                    bat label: '', script: '''mvn sonar:sonar \
+                   -Dsonar.host.url=http://localhost:9000 \
+                   -Dsonar.login=squ_a600809848d6c2140cff3fbfb9856b3e721ca481'''
+}
+ } 
   }
   post {
        always {
